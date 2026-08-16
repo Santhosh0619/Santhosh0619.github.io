@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santhosh K — Backend Developer &amp; AI Automation</title>
+<meta name="description" content="Santhosh K — MCA Graduate, Backend Developer, and AI-Driven Automation specialist. FastAPI, Spring Boot, Claude Code.">
+<meta name="theme-color" content="#0a0f1c">
+<meta property="og:title" content="Santhosh K — Backend Developer & AI Automation">
+<meta property="og:description" content="MCA Graduate · Backend Developer · AI-Driven Automation">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%23818cf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='%230a0f1c'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='url(%23g)' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-gradient-mesh" aria-hidden="true">
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+</div>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-trail" id="cursor-trail" aria-hidden="true"></div>
+
+<header class="navbar" id="navbar">
+  <nav class="nav-inner">
+    <a href="#hero" class="nav-logo">Santhosh K</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg id="icon-hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="#about" class="mobile-nav-link">About</a></li>
+    <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+    <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+    <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+    <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+  </ul>
+</div>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-name">Santhosh K</h1>
+      <p class="hero-tagline"><span id="typing-text"></span><span class="cursor" id="cursor">&nbsp;</span></p>
+      <p class="hero-subtagline">Fresh out of my MCA, I build backend systems with FastAPI &amp; Spring Boot &mdash; and I use AI tools to ship them faster.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <a href="assets/Santhosh_Resume.pdf" download target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+    <div class="hero-code-decoration" aria-hidden="true"><pre><code><span class="code-kw">const</span> developer = {
+  <span class="code-key">name</span>: <span class="code-str">"Santhosh K"</span>,
+  <span class="code-key">role</span>: <span class="code-str">"Backend Developer"</span>,
+  <span class="code-key">tools</span>: [<span class="code-str">"FastAPI"</span>, <span class="code-str">"Spring Boot"</span>,
+          <span class="code-str">"Claude Code"</span>],
+  <span class="code-key">passion</span>: <span class="code-str">"Building systems that
+            scale and automating
+            everything else"</span>
+};</code></pre></div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title section-heading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-summary reveal">I'm a backend developer who just finished my MCA at KGISL Institute, Coimbatore. During my two internships, I got to work on real products &mdash; a medical education platform used by 1.04M+ nursing and medical students, and a manufacturing ERP system I designed and built solo, end-to-end, from scratch.</p>
+          <p class="about-summary reveal">Along with backend, I've automated some of the repetitive tasks by using Claude Code hooks, skills, sub-agents, and MCP &mdash; speeding up development time while keeping the code quality intact.</p>
+          <p class="about-highlight reveal">// Backend systems that scale &middot; AI workflows that automate the boring parts</p>
+          <div class="quick-facts">
+            <div class="fact-card reveal-item">
+              <span class="fact-label">Location:</span>
+              <span class="fact-value">Coimbatore, India</span>
+            </div>
+            <div class="fact-card reveal-item">
+              <span class="fact-label">Degree:</span>
+              <span class="fact-value">MCA, KGISL Institute</span>
+            </div>
+            <div class="fact-card reveal-item">
+              <span class="fact-label">Focus:</span>
+              <span class="fact-value">Backend &amp; AI Automation</span>
+            </div>
+            <div class="fact-card reveal-item">
+              <span class="fact-label">Certs:</span>
+              <span class="fact-value">11 Anthropic + 4 Industry</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image profile-image-wrapper">
+          <div class="image-decoration" aria-hidden="true"></div>
+          <img src="assets/profile.png" alt="Santhosh K profile photo" class="profile-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title section-heading">Experience</h2>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line" id="timeline-line" aria-hidden="true"></div>
+        <div class="timeline-item reveal-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="card timeline-card">
+            <h3 class="timeline-role">Software Developer Intern</h3>
+            <p class="timeline-meta"><span class="timeline-company">KodeAstra</span> <span class="timeline-period">May 2026 &ndash; Present</span></p>
+            <ul class="timeline-desc">
+              <li>Built an end-to-end AI-driven development pipeline &mdash; covering branch creation, documentation, implementation, review, testing, and deployment &mdash; that I use to ship my own feature work with Claude Code sub-agents, hooks, and skills.</li>
+              <li>Shipped two backend features for Archer Review, a medical education platform serving 1.04M+ students, building 10 API routes that power its exam scheduling and grading workflows.</li>
+              <li>Independently restored Planibble, a broken full-stack fitness app, to a fully functional state within one month &mdash; fixing 15+ critical bugs across frontend and backend with guidance from senior engineers.</li>
+            </ul>
+            <div class="project-feature">
+              <h4>How the Pipeline Works</h4>
+              <p>A new task creates its own feature branch and ingests the requirements. For a new module, a sub-agent writes the PRD/FRD/NFR docs; for legacy code that has none, it reverse-engineers them from what's already there.</p>
+              <p>Implementation runs under safety hooks that block dangerous shell commands and auto-format every file with Prettier. Once code is written, a Requirement Compliance sub-agent checks it against the actual documented business logic, not just syntax.</p>
+              <p>If unit tests fail, the pipeline debugs and patches the code itself until they pass, then a Playwright MCP integration runs full end-to-end browser tests to catch UI regressions.</p>
+              <p>Once verified, it writes the commit, pushes the branch, and opens a PR through the GitHub MCP. While CI, CodeRabbit, and a secondary AI reviewer check the PR, the pipeline watches for failures, pushes fixes, and re-verifies until everything's green &mdash; then merges and deletes the branch.</p>
+              <p>One piece I'm proud of: critical or destructive actions don't run silently. They push an approval request to my phone through ntfy, so I can review and approve or reject a step from wherever I am, not just from my desk.</p>
+            </div>
+            <div class="tag-list">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Python</span>
+              <span class="tag">Claude Code</span>
+              <span class="tag">Sub-Agents</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">ntfy</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal-item">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <div class="card timeline-card">
+            <h3 class="timeline-role">Software Developer Intern</h3>
+            <p class="timeline-meta"><span class="timeline-company">Ash7Hub</span> <span class="timeline-period">Dec 2025 &ndash; Mar 2026</span></p>
+            <ul class="timeline-desc">
+              <li>Solely designed and built the backend for FlowCRM, a manufacturing ERP platform &mdash; architecting 131 REST API endpoints across 14 modules with FastAPI, covering the complete order lifecycle from enquiry to invoicing.</li>
+              <li>Implemented complex workflow logic including multi-level quality inspection sign-offs and Razorpay payment reconciliation, validated through 549 automated backend tests.</li>
+            </ul>
+            <div class="tag-list">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Razorpay</span>
+              <span class="tag">Pytest</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title section-heading">Projects</h2>
+      <div class="projects-grid">
+        <article class="card project-card project-featured project-accent-blue reveal-item">
+          <h3 class="project-title">Archer Review &mdash; Medical Education Platform</h3>
+          <p class="project-subtitle">KodeAstra &middot; FastAPI</p>
+          <div class="ranking-badges">
+            <span class="ranking-badge">1.04M+ Students</span>
+            <span class="ranking-badge">Deloitte Fast 500</span>
+            <span class="ranking-badge">Inc 5000</span>
+          </div>
+          <p class="project-desc">Archer Review is a medical education platform ranked among Deloitte's Technology Fast 500 and Inc 5000, serving 1.04M+ students preparing for nursing and medical board exams. I built two backend features from scratch, shipping 10 API routes that power the platform's exam scheduling and grading workflows.</p>
+          <div class="project-feature">
+            <h4>Study Calendar</h4>
+            <figure class="project-screenshot project-screenshot-float-left">
+              <img src="assets/archer-review-study-calendar.png" alt="Archer Review Study Calendar feature showing a monthly exam prep schedule with daily content blocks" loading="lazy">
+              <figcaption>The Study Calendar feature, live on Archer Review</figcaption>
+            </figure>
+            <p>Students pick an exam date up to six months out &mdash; that's the max plan length the client supported. The curriculum for every plan length was already sitting in the database: the client had pre-mapped exactly which videos, live lectures, subject tests, and assessments a student should cover for a 1-month plan versus a 6-month one, IDs and all.</p>
+            <p>My part was the scheduling logic. Students set their study hours per day (a full day is 6 hours, split into sessions of at least 2 hours each), plus rest days and holidays. I fill each session with content in the exact order the client specified, and content doesn't always fit cleanly &mdash; a 3-hour video against 2+2+2-hour sessions gets 2 hours in the first session and spills its last hour into the second, and whatever time is left over in that session gets filled with a test or assessment instead of sitting empty. Students mark each piece as completed as they go, and I designed the underlying schema from scratch to support it.</p>
+          </div>
+          <div class="project-feature">
+            <h4>Educator Grading</h4>
+            <p>Different institutions on Archer Review grade differently &mdash; an 80% might be an A under one institution's scheme, while another doesn't call it an A until 90%. I stored each educator's grade boundaries and used them to work out and display the right grade against a student's score, so the same raw test score can show up as a different letter grade depending on which institution the student belongs to.</p>
+          </div>
+          <div class="tag-list">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="card project-card project-featured project-accent-green reveal-item">
+          <h3 class="project-title">Planibble &mdash; Cloud Fitness Platform</h3>
+          <p class="project-subtitle">KodeAstra &middot; React JS &middot; Flutter &middot; Node.js &middot; PostgreSQL</p>
+          <figure class="project-screenshot project-screenshot-mobile project-screenshot-float-right">
+            <img src="assets/planibble-workout.jpg" alt="Planibble workout screen showing a generated exercise plan with sets and reps" loading="lazy">
+            <figcaption>Planibble's workout screen, back up and running</figcaption>
+          </figure>
+          <p class="project-desc">Planibble's core idea is an AI-generated workout plan &mdash; the client had a set of rules hosted in n8n that pick exercises based on where you're training (a full gym vs. working out from home), what equipment you actually have, and any strain or injury you've reported. None of that mattered when the codebase landed on my desk, because it was broken at almost every step before it ever reached that logic.</p>
+          <p class="project-desc">The workout plan wasn't generating at all &mdash; the API call was failing because of a malformed payload, so I traced and fixed the data going out before the request ever reached the endpoint. Profile setup was broken next: the save button simply wasn't calling the profile API, which mattered because workout generation depends entirely on a completed profile. And once a workout was actually completed, it wasn't showing up in the history tab &mdash; the complete-workout API wasn't writing a row into the history table, so I fixed that insert. Alongside those three, there was a long tail of smaller UI bugs &mdash; unresponsive buttons, broken navigation states &mdash; that I worked through the same way.</p>
+          <p class="project-desc">I used Claude Code throughout to speed up tracing root causes across a codebase I hadn't written, pointing it at specific failing flows rather than asking it to fix things blind. The app was restored to a fully functional state within a month, and is now with the team and client for next steps.</p>
+          <div class="tag-list">
+            <span class="tag">React JS</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Claude Code</span>
+          </div>
+        </article>
+
+        <article class="card project-card project-featured project-accent-indigo reveal-item">
+          <h3 class="project-title">FlowCRM &mdash; Manufacturing ERP Platform</h3>
+          <p class="project-subtitle">Ash7Hub &middot; FastAPI &middot; PostgreSQL &middot; Razorpay &middot; Brevo</p>
+          <div class="ranking-badges">
+            <span class="ranking-badge">131 API Endpoints</span>
+            <span class="ranking-badge">14 Modules</span>
+            <span class="ranking-badge">549 Automated Tests</span>
+          </div>
+          <p class="project-desc">Built end-to-end, solo, from a blank repo &mdash; not a live production system yet, but a complete 14-module manufacturing ERP architected single-handedly as the sole backend developer, with 131 REST API endpoints covering the order lifecycle from enquiry, quotation, and purchase order through production, inspection, and invoicing.</p>
+          <div class="project-feature">
+            <h4>The Job Card &amp; Quality Sign-Off Chain</h4>
+            <p>The Job Card doesn't have a single status field &mdash; its status is derived from the Operation's status, which is itself derived from the Quality Sign-off outcome, and every sign-off attempt (pass, rework, or reject) gets appended to a rework-history table so the full audit trail is reconstructable, which is an ISO 9001 traceability requirement. Operation type changes what validation applies too: Machining needs a machine ID, Welding needs a whole nested set of welding details, and if PWHT (post-weld heat treatment) is flagged on top of that, it conditionally requires its own details filled in &mdash; a three-level conditional chain that re-runs on every mutation. On top of that, explicit transition rules block illegal status jumps, like marking an operation Complete without it ever going through sign-off.</p>
+          </div>
+          <div class="project-feature">
+            <h4>Final Inspection &mdash; the largest file in the codebase</h4>
+            <p>This module is less a state machine and more a data-relationship problem: it auto-populates a document completeness checklist by reaching across four other modules &mdash; GRN's mill certificates, Incoming Inspection's PMI/NABL results, Internal Inspection reports, and the Job Card &mdash; and has to tell "genuinely missing" apart from "not applicable" for each one, since a missing PMI result is fine (it's optional) but a missing material test certificate isn't. On top of that sits a conditional customer-approval gate: the overall result can only pass when approval is granted, but only when approval is actually required in the first place.</p>
+          </div>
+          <div class="project-feature">
+            <h4>Order Register &mdash; keeping 14 modules honest</h4>
+            <p>Every downstream module pushes its stage updates into the Order Register through an auto-trigger engine, and the rules that matter get enforced in two places on purpose &mdash; "you can't close an order until its invoice is fully paid" is checked both at the invoice's own trigger point and again inside the stage-update logic itself, so there's no direct API path that can skip it.</p>
+          </div>
+          <div class="project-feature">
+            <h4>Razorpay &mdash; the webhook contract, not a payment processor</h4>
+            <p>The interesting part wasn't calling Razorpay's API, it was trusting what comes back from it. The webhook endpoint has no auth dependency &mdash; Razorpay calls it directly &mdash; so trust comes entirely from verifying its HMAC signature before the payload is ever parsed; an invalid signature gets rejected outright. It's also idempotent: since Razorpay retries webhook delivery at least once, I check whether the payment link is already marked paid before applying it again. All 8 payment modes (UPI, cards, net banking, bank transfer, cheque, cash, and Razorpay online) flow through one shared function that recomputes what's paid and what's still owed, so manual and online payments never diverge into separate logic. To be precise about scope: this is a payment-links integration with signature verification and idempotency, not a custom payment processor &mdash; retry handling on failed deliveries is Razorpay's job, not something I built.</p>
+          </div>
+          <div class="project-feature">
+            <h4>A few architectural calls I'd defend</h4>
+            <p>Business logic lives only in the service layer, never in a router or a raw query &mdash; which is what let the invoice-before-close rule above be enforced in exactly one place per concern, twice by design rather than by accident. One shared function generates every module's document number (a calendar-year-scoped sequence, plus a separate financial-year variant for invoices), reused across 12+ document types instead of reimplemented per module. Razorpay's key, the webhook secret, and the Brevo API key all go through the same Fernet-based encryption helper and are never returned to the frontend. For the two jobs that only need to run once a day, I used a plain in-process async loop instead of pulling in Celery or APScheduler &mdash; a deliberate call to not add a dependency for something that simple.</p>
+          </div>
+          <p class="project-desc">Brevo handles account-lifecycle email only &mdash; staff invites, password resets &mdash; not order or quotation notifications, which are still sent manually by staff in this first version. The whole system was built module-by-module against a Backend &rarr; Web &rarr; Full-Flow E2E test cycle, which is where the 549 automated backend tests came from &mdash; nothing shipped without integration coverage.</p>
+          <div class="tag-list">
+            <span class="tag">FastAPI</span>
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Razorpay</span>
+            <span class="tag">Brevo</span>
+          </div>
+        </article>
+
+        <article class="card project-card project-featured project-accent-amber reveal-item">
+          <h3 class="project-title">Expense Tracker</h3>
+          <p class="project-subtitle">Ash7Hub &middot; FastAPI &middot; React JS</p>
+          <figure class="project-screenshot project-screenshot-float-left">
+            <img src="assets/expense-tracker-dashboard.png" alt="Expense Tracker dashboard showing total spend, salary, budget, a category breakdown pie chart, and a daily spend log" loading="lazy">
+            <figcaption>The Expense Tracker dashboard</figcaption>
+          </figure>
+          <p class="project-desc">The dashboard centers on three numbers that actually matter to a user &mdash; salary, budget, and total spend for the month &mdash; with everything else built to explain the gap between them. Expenses get tagged by category (Entertainment, Housing, Studies, Groceries, and more), and the backend aggregates them into a percentage breakdown shown as a pie chart, so a category like Entertainment eating 34% of that month's spend is visible at a glance instead of buried in a list. Below that sits a day-by-day log grouped by date, with every entry tagged by category and amount, feeding the same breakdown shown above it.</p>
+          <p class="project-desc">User authentication, category management, and that report generation all run through a FastAPI backend, with React handling the dashboard on the frontend. It's a smaller project than the others here, but it's mine end-to-end, and it's actually live &mdash; not just a screenshot.</p>
+          <a href="https://jade-zabaione-63e6cf.netlify.app" target="_blank" rel="noopener noreferrer" class="live-demo-link">
+            Live Demo
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <div class="tag-list">
+            <span class="tag">FastAPI</span>
+            <span class="tag">React JS</span>
+            <span class="tag">Python</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title section-heading">Technical Skills</h2>
+      <div class="skills-groups">
+        <div class="skill-category reveal-item">
+          <h3 class="skill-category-label">
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Languages
+          </h3>
+          <div class="pill-row">
+            <span class="pill skill-badge">Python</span>
+            <span class="pill skill-badge">Java</span>
+            <span class="pill skill-badge">JavaScript</span>
+            <span class="pill skill-badge">SQL</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-item">
+          <h3 class="skill-category-label">
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Frameworks
+          </h3>
+          <div class="pill-row">
+            <span class="pill skill-badge">FastAPI</span>
+            <span class="pill skill-badge">Spring Boot</span>
+            <span class="pill skill-badge">React JS</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-item">
+          <h3 class="skill-category-label">
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 5v14c0 1.66-4 3-9 3s-9-1.34-9-3V5"></path><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path></svg>
+            Databases
+          </h3>
+          <div class="pill-row">
+            <span class="pill skill-badge">PostgreSQL</span>
+            <span class="pill skill-badge">MySQL</span>
+            <span class="pill skill-badge">Redis</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-item">
+          <h3 class="skill-category-label">
+            <svg class="skill-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"></path></svg>
+            Tools
+          </h3>
+          <div class="pill-row">
+            <span class="pill skill-badge">Docker</span>
+            <span class="pill skill-badge">Git</span>
+            <span class="pill skill-badge">GitHub</span>
+            <span class="pill skill-badge">Postman</span>
+            <span class="pill skill-badge">VS Code</span>
+            <span class="pill skill-badge">IntelliJ IDEA</span>
+            <span class="pill skill-badge">Cursor AI</span>
+            <span class="pill skill-badge">Claude Code</span>
+          </div>
+        </div>
+        <div class="skill-category reveal-item">
+          <h3 class="skill-category-label"><span class="ai-sparkle" aria-hidden="true">&#10022;</span> AI &amp; Automation</h3>
+          <div class="pill-row">
+            <span class="pill skill-badge">Claude Code</span>
+            <span class="pill skill-badge">MCP</span>
+            <span class="pill skill-badge">Agent Skills</span>
+            <span class="pill skill-badge">Sub-Agents</span>
+            <span class="pill skill-badge">LangChain</span>
+            <span class="pill skill-badge">LangGraph</span>
+            <span class="pill skill-badge">RAG</span>
+            <span class="pill skill-badge">Langflow</span>
+            <span class="pill skill-badge">Pydantic AI</span>
+            <span class="pill skill-badge">Prompt Engineering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="certifications">
+    <div class="container">
+      <h2 class="section-title section-heading">Certifications</h2>
+      <div class="highlighted-certs-group">
+        <h3 class="skill-category-label">Backend &amp; Industry</h3>
+        <div class="highlighted-certs">
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">IBM Full Stack JavaScript Developer</h3>
+            <p class="cert-issuer">Coursera</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">Object-Oriented Programming in Java</h3>
+            <p class="cert-issuer">Coursera</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">Spring Framework for Java Development</h3>
+            <p class="cert-issuer">Coursera</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">SQL Basics</h3>
+            <p class="cert-issuer">SkillRack</p>
+          </div>
+        </div>
+      </div>
+      <div class="highlighted-certs-group">
+        <h3 class="skill-category-label"><span class="ai-sparkle" aria-hidden="true">&#10022;</span> AI &amp; Automation</h3>
+        <div class="highlighted-certs">
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">Claude Code in Action</h3>
+            <p class="cert-issuer">Anthropic</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">Introduction to Subagents</h3>
+            <p class="cert-issuer">Anthropic</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">Introduction to MCP</h3>
+            <p class="cert-issuer">Anthropic</p>
+          </div>
+          <div class="cert-card reveal-item">
+            <svg class="cert-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            <h3 class="cert-name">MCP Advanced Topics</h3>
+            <p class="cert-issuer">Anthropic</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-secondary view-all-btn" id="view-all-certs" aria-expanded="false" aria-controls="all-certs">View All Certifications</button>
+
+      <div class="all-certs" id="all-certs">
+       <div class="all-certs-inner">
+        <div class="cert-group">
+          <h4 class="cert-group-title">Anthropic (11)</h4>
+          <ul class="cert-list">
+            <li>Claude Code in Action</li>
+            <li>Introduction to Agent Skills</li>
+            <li>Introduction to Subagents</li>
+            <li>Introduction to MCP</li>
+            <li>MCP Advanced Topics</li>
+            <li>AI Fluency: Framework &amp; Foundations</li>
+            <li>AI Capabilities and Limitations</li>
+            <li>Claude Platform 101</li>
+            <li>Claude Code 101</li>
+            <li>Claude 101</li>
+            <li>Introduction to Claude Cowork</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h4 class="cert-group-title">Coursera</h4>
+          <ul class="cert-list">
+            <li>IBM Full Stack JavaScript Developer</li>
+            <li>Object-Oriented Programming in Java</li>
+            <li>Spring Framework for Java Development</li>
+          </ul>
+        </div>
+        <div class="cert-group">
+          <h4 class="cert-group-title">SkillRack</h4>
+          <ul class="cert-list">
+            <li>SQL Basics</li>
+          </ul>
+        </div>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title section-heading">Education</h2>
+      <div class="education-grid">
+        <div class="card education-card reveal-item">
+          <h3 class="education-degree">Master of Computer Applications (MCA)</h3>
+          <p class="education-score">Score: 77.4%</p>
+          <p class="education-institution">KGISL Institute of Information Management, Coimbatore</p>
+          <p class="education-period">Aug 2024 &ndash; Apr 2026</p>
+        </div>
+        <div class="card education-card reveal-item">
+          <h3 class="education-degree">B.Sc. Computer Science</h3>
+          <p class="education-score">Score: 82.8%</p>
+          <p class="education-institution">Sri Ramakrishna College of Arts and Science, Coimbatore</p>
+          <p class="education-period">Aug 2021 &ndash; May 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title section-heading">Quick Answers</h2>
+      <p class="faq-subtitle reveal">Common questions recruiters ask about my background and skills.</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What kind of roles are you looking for?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>I'm looking for Backend Developer and AI Developer roles. My strongest area is building REST APIs and backend systems with FastAPI and Spring Boot. I'm also experienced in using AI tools like Claude Code to automate development workflows &mdash; so roles that combine backend development with AI tooling are a great fit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is your strongest technical skill?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Backend development with Python and FastAPI is my strongest area &mdash; I've built production features on Archer Review, a medical education platform used by 1.04M+ students. I also know Java and Spring Boot, and during my second internship I designed and built FlowCRM, a 14-module manufacturing ERP, solo and end-to-end using FastAPI. Beyond core coding, I'm good at automating development workflows using Claude Code with hooks, sub-agents, and MCP integrations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What projects are you most proud of?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Archer Review stands out the most &mdash; not because it's impressive on paper (it's ranked in Deloitte's Technology Fast 500 and Inc 5000), but because I built real features that 1.04M+ students actually use. The Study Calendar and Educator Grading features I built are live in production. Planibble is a close second &mdash; I took a completely broken codebase, debugged the entire stack, and restored it to a fully functional state using Claude Code throughout; it's now with the team and client for next steps.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What AI tools do you actually use day-to-day?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Claude Code is my primary tool &mdash; I use it in the terminal with custom hooks for auto-formatting, sub-agents for automated code reviews against project requirements, MCP integrations to connect tools together, and agent skills for reusable workflows. I also hold 11 Anthropic certifications covering these areas. I use Cursor AI for IDE-based assistance. The key point: I use AI to automate the repetitive parts of development, not to replace thinking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>You're a fresher &mdash; what makes you stand out?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Two things. First, I have real internship experience on production systems &mdash; not just tutorial projects. The features I built on Archer Review are live and used by students. Second, I actively automate my development workflow. I set up GitHub Actions, Claude Code hooks, and sub-agent code reviews during my KodeAstra internship &mdash; which means I ship cleaner code faster. I'm not just a fresher who knows syntax; I've worked in real teams on real products.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I contact you?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>Email is the best way &mdash; <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=santhoshsiva990@gmail.com" target="_blank" rel="noopener noreferrer">santhoshsiva990@gmail.com</a>. You can also connect on <a href="https://linkedin.com/in/santhosh0619" target="_blank" rel="noopener noreferrer">LinkedIn</a> or check my code on <a href="https://github.com/Santhosh0619" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <section class="section" id="contact">
+    <div class="container contact-inner">
+      <h2 class="section-title section-heading">Get in Touch</h2>
+      <h3 class="contact-heading reveal">Let's Work Together</h3>
+      <p class="contact-desc reveal">I'm actively looking for Backend Developer and AI Developer roles. I bring clean code, real internship experience on production systems, and a habit of automating everything I can. If that sounds useful to your team, let's talk.</p>
+      <div class="contact-cards">
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=santhoshsiva990@gmail.com" target="_blank" rel="noopener noreferrer" class="card contact-card reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 6 12 13 2 6"></polyline><path d="M2 6h20v12H2z"></path></svg>
+          <span class="contact-card-label">Email</span>
+          <span class="contact-card-value">santhoshsiva990@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/santhosh0619" target="_blank" rel="noopener noreferrer" class="card contact-card reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+          <span class="contact-card-label">LinkedIn</span>
+          <span class="contact-card-value">linkedin.com/in/santhosh0619</span>
+        </a>
+        <a href="https://github.com/Santhosh0619" target="_blank" rel="noopener noreferrer" class="card contact-card reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.42.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"></path></svg>
+          <span class="contact-card-label">GitHub</span>
+          <span class="contact-card-value">github.com/Santhosh0619</span>
+        </a>
+      </div>
+      <a href="assets/Santhosh_Resume.pdf" download class="resume-text-link reveal">Or download my resume directly &rarr;</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>&copy; 2026 Santhosh K</p>
+  </div>
+</footer>
+
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+</button>
+
+<script src="script.js" defer></script>
+</body>
+</html>
