@@ -1123,6 +1123,10 @@ html[data-theme="light"] .tag {
   background-color: #f59e0b;
 }
 
+.project-accent-teal::before {
+  background-color: #2dd4bf;
+}
+
 .project-featured {
   grid-column: 1 / -1;
 }

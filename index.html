@@ -138,7 +138,7 @@
             <p class="timeline-meta"><span class="timeline-company">KodeAstra</span> <span class="timeline-period">May 2026 &ndash; Present</span></p>
             <ul class="timeline-desc">
               <li>Built an end-to-end AI-driven development pipeline &mdash; covering branch creation, documentation, implementation, review, testing, and deployment &mdash; that I use to ship my own feature work with Claude Code sub-agents, hooks, and skills.</li>
-              <li>Shipped two backend features for Archer Review, a medical education platform serving 1.04M+ students, building 10 API routes that power its exam scheduling and grading workflows.</li>
+              <li>Shipped two backend features for Archer Review, a medical education platform serving 1.04M+ students, building the API routes that power its exam scheduling and grading workflows.</li>
               <li>Independently restored Planibble, a broken full-stack fitness app, to a fully functional state within one month &mdash; fixing 15+ critical bugs across frontend and backend with guidance from senior engineers.</li>
             </ul>
             <div class="project-feature">
@@ -165,8 +165,8 @@
             <h3 class="timeline-role">Software Developer Intern</h3>
             <p class="timeline-meta"><span class="timeline-company">Ash7Hub</span> <span class="timeline-period">Dec 2025 &ndash; Mar 2026</span></p>
             <ul class="timeline-desc">
-              <li>Solely designed and built the backend for FlowCRM, a manufacturing ERP platform &mdash; architecting 131 REST API endpoints across 14 modules with FastAPI, covering the complete order lifecycle from enquiry to invoicing.</li>
-              <li>Implemented complex workflow logic including multi-level quality inspection sign-offs and Razorpay payment reconciliation, validated through 549 automated backend tests.</li>
+              <li>Solely designed and built the backend for FlowCRM, a manufacturing ERP platform &mdash; architecting the REST API across 14 modules with FastAPI, covering the complete order lifecycle from enquiry to invoicing.</li>
+              <li>Implemented complex workflow logic including multi-level quality inspection sign-offs and Razorpay payment reconciliation, backed by a full automated backend test suite.</li>
             </ul>
             <div class="tag-list">
               <span class="tag">FastAPI</span>
@@ -195,7 +195,7 @@
             <span class="ranking-badge">Deloitte Fast 500</span>
             <span class="ranking-badge">Inc 5000</span>
           </div>
-          <p class="project-desc">Archer Review is a medical education platform ranked among Deloitte's Technology Fast 500 and Inc 5000, serving 1.04M+ students preparing for nursing and medical board exams. I built two backend features from scratch, shipping 10 API routes that power the platform's exam scheduling and grading workflows.</p>
+          <p class="project-desc">Archer Review is a medical education platform ranked among Deloitte's Technology Fast 500 and Inc 5000, serving 1.04M+ students preparing for nursing and medical board exams. I built two backend features from scratch that power the platform's exam scheduling and grading workflows.</p>
           <div class="project-feature">
             <h4>Study Calendar</h4>
             <figure class="project-screenshot project-screenshot-float-left">
@@ -235,36 +235,65 @@
           </div>
         </article>
 
+        <article class="card project-card project-featured project-accent-teal reveal-item">
+          <h3 class="project-title">Hindsight &mdash; Incident Intelligence Platform</h3>
+          <p class="project-subtitle">Ash7Hub &middot; FastAPI &middot; LangGraph &middot; PostgreSQL/pgvector &middot; React</p>
+          <div class="ranking-badges">
+            <span class="ranking-badge">6-Node Agent Pipeline</span>
+            <span class="ranking-badge">1.0 Citation Validity</span>
+            <span class="ranking-badge">18 Phases Shipped</span>
+          </div>
+          <p class="project-desc">Built solo, end-to-end &mdash; a multi-tenant incident-intelligence platform on the idea that your team has usually already solved this incident before, it just isn't findable. Hindsight retrieves and cites the closest matching historical postmortem the moment a new incident opens, running the request through a six-node LangGraph agent pipeline that streams live to the browser over SSE, with every hop checkpointed to Postgres.</p>
+          <div class="project-feature">
+            <h4>Hybrid Retrieval, Not Just Vector Search</h4>
+            <p>Matching an incident to the right past postmortem isn't a single-signal problem, so retrieval fuses three sources: vector search over pgvector, keyword search via Postgres tsvector with BM25 reranking, and graph expansion across a service-dependency graph walked with a pure-SQL recursive CTE, weighted by edge criticality and service tier &mdash; no LLM call in that node at all. The three are combined with Reciprocal Rank Fusion, and every result keeps its per-source attribution back to the UI instead of collapsing into one opaque score.</p>
+          </div>
+          <div class="project-feature">
+            <h4>A Critic That Checks Citations, Not the LLM's Opinion</h4>
+            <p>The self-correcting loop hinges on a critic node that verifies every citation by token-overlap between the claim and the cited chunk &mdash; a deterministic check, not the LLM grading its own homework. Low-confidence drafts route back through retrieval with a refined query, up to a fixed retry budget, so the loop corrects itself without ever spinning forever.</p>
+          </div>
+          <div class="project-feature">
+            <h4>One Postgres Instance Instead of Three</h4>
+            <p>Relational data, pgvector embeddings, and recursive-CTE graph traversal all run on a single PostgreSQL 16 instance rather than a separate vector store, graph database, and relational database stitched together. That kept ingest, embedding, and graph writes inside one transaction and cut the operational surface down to one thing to run and back up.</p>
+          </div>
+          <div class="project-feature">
+            <h4>Works With Zero API Keys Configured</h4>
+            <p>The LLM routing layer tries Gemini, then Groq, then Ollama, retrying each before falling back to the next, and embeddings can run fully local on CPU via sentence-transformers. That means the app boots and search still works with no API key set at all, and when no provider is reachable it ships a degraded retrieval-only brief instead of looping forever waiting on a call that will never succeed.</p>
+          </div>
+          <div class="project-feature">
+            <h4>An Evaluation Harness That Reports a Tied Result</h4>
+            <p>I wrote a from-scratch evaluation harness &mdash; recall@k, MRR, groundedness, citation validity, no eval-library wrapper &mdash; and ran an honest ablation across vector-only, vector+BM25, and vector+BM25+graph retrieval configurations. It reported a tied result across configurations rather than being tuned until one config looked better, because the point was measuring what actually helps, not producing a number for a resume.</p>
+          </div>
+          <p class="project-desc">Every phase went through the same gated sequence: PRD/FRD/NFR written before any code, self-written git hooks that block AI-attribution strings and secret-shaped patterns and run the full lint/type/test suite before a push reaches main, an automated code-reviewer and Playwright e2e sub-agent run per phase, and a 4-job CI pipeline (backend, frontend, migrations, e2e) gating every merge &mdash; across 18 shipped phases and 125 commits, feature-complete and pre-deploy as of writing.</p>
+          <div class="tag-list">
+            <span class="tag">FastAPI</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">pgvector</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Docker</span>
+          </div>
+        </article>
+
         <article class="card project-card project-featured project-accent-indigo reveal-item">
           <h3 class="project-title">FlowCRM &mdash; Manufacturing ERP Platform</h3>
           <p class="project-subtitle">Ash7Hub &middot; FastAPI &middot; PostgreSQL &middot; Razorpay &middot; Brevo</p>
           <div class="ranking-badges">
-            <span class="ranking-badge">131 API Endpoints</span>
             <span class="ranking-badge">14 Modules</span>
-            <span class="ranking-badge">549 Automated Tests</span>
+            <span class="ranking-badge">ISO 9001 Traceability</span>
+            <span class="ranking-badge">Solo Build</span>
           </div>
-          <p class="project-desc">Built end-to-end, solo, from a blank repo &mdash; not a live production system yet, but a complete 14-module manufacturing ERP architected single-handedly as the sole backend developer, with 131 REST API endpoints covering the order lifecycle from enquiry, quotation, and purchase order through production, inspection, and invoicing.</p>
+          <p class="project-desc">Built end-to-end, solo, from a blank repo &mdash; not a live production system yet, but a complete 14-module manufacturing ERP architected single-handedly as the sole backend developer, covering the order lifecycle from enquiry, quotation, and purchase order through production, inspection, and invoicing.</p>
           <div class="project-feature">
             <h4>The Job Card &amp; Quality Sign-Off Chain</h4>
-            <p>The Job Card doesn't have a single status field &mdash; its status is derived from the Operation's status, which is itself derived from the Quality Sign-off outcome, and every sign-off attempt (pass, rework, or reject) gets appended to a rework-history table so the full audit trail is reconstructable, which is an ISO 9001 traceability requirement. Operation type changes what validation applies too: Machining needs a machine ID, Welding needs a whole nested set of welding details, and if PWHT (post-weld heat treatment) is flagged on top of that, it conditionally requires its own details filled in &mdash; a three-level conditional chain that re-runs on every mutation. On top of that, explicit transition rules block illegal status jumps, like marking an operation Complete without it ever going through sign-off.</p>
+            <p>The Job Card doesn't have a single status field &mdash; its status is derived from the Operation's status, which is itself derived from the Quality Sign-off outcome, and every sign-off attempt (pass, rework, or reject) gets appended to a rework-history table so the full audit trail is reconstructable, which is an ISO 9001 traceability requirement. Operation type changes what validation applies too, down to a three-level conditional chain for welding and post-weld heat treatment that re-runs on every mutation, with explicit transition rules blocking illegal status jumps like marking an operation Complete without it ever going through sign-off.</p>
           </div>
           <div class="project-feature">
-            <h4>Final Inspection &mdash; the largest file in the codebase</h4>
-            <p>This module is less a state machine and more a data-relationship problem: it auto-populates a document completeness checklist by reaching across four other modules &mdash; GRN's mill certificates, Incoming Inspection's PMI/NABL results, Internal Inspection reports, and the Job Card &mdash; and has to tell "genuinely missing" apart from "not applicable" for each one, since a missing PMI result is fine (it's optional) but a missing material test certificate isn't. On top of that sits a conditional customer-approval gate: the overall result can only pass when approval is granted, but only when approval is actually required in the first place.</p>
+            <h4>Razorpay &mdash; the Webhook Contract, Not a Payment Processor</h4>
+            <p>The interesting part wasn't calling Razorpay's API, it was trusting what comes back from it. The webhook endpoint has no auth dependency &mdash; Razorpay calls it directly &mdash; so trust comes entirely from verifying its HMAC signature before the payload is ever parsed, and it's idempotent against Razorpay's at-least-once retry delivery. All 8 payment modes flow through one shared function that recomputes what's paid and what's still owed, so manual and online payments never diverge into separate logic.</p>
           </div>
-          <div class="project-feature">
-            <h4>Order Register &mdash; keeping 14 modules honest</h4>
-            <p>Every downstream module pushes its stage updates into the Order Register through an auto-trigger engine, and the rules that matter get enforced in two places on purpose &mdash; "you can't close an order until its invoice is fully paid" is checked both at the invoice's own trigger point and again inside the stage-update logic itself, so there's no direct API path that can skip it.</p>
-          </div>
-          <div class="project-feature">
-            <h4>Razorpay &mdash; the webhook contract, not a payment processor</h4>
-            <p>The interesting part wasn't calling Razorpay's API, it was trusting what comes back from it. The webhook endpoint has no auth dependency &mdash; Razorpay calls it directly &mdash; so trust comes entirely from verifying its HMAC signature before the payload is ever parsed; an invalid signature gets rejected outright. It's also idempotent: since Razorpay retries webhook delivery at least once, I check whether the payment link is already marked paid before applying it again. All 8 payment modes (UPI, cards, net banking, bank transfer, cheque, cash, and Razorpay online) flow through one shared function that recomputes what's paid and what's still owed, so manual and online payments never diverge into separate logic. To be precise about scope: this is a payment-links integration with signature verification and idempotency, not a custom payment processor &mdash; retry handling on failed deliveries is Razorpay's job, not something I built.</p>
-          </div>
-          <div class="project-feature">
-            <h4>A few architectural calls I'd defend</h4>
-            <p>Business logic lives only in the service layer, never in a router or a raw query &mdash; which is what let the invoice-before-close rule above be enforced in exactly one place per concern, twice by design rather than by accident. One shared function generates every module's document number (a calendar-year-scoped sequence, plus a separate financial-year variant for invoices), reused across 12+ document types instead of reimplemented per module. Razorpay's key, the webhook secret, and the Brevo API key all go through the same Fernet-based encryption helper and are never returned to the frontend. For the two jobs that only need to run once a day, I used a plain in-process async loop instead of pulling in Celery or APScheduler &mdash; a deliberate call to not add a dependency for something that simple.</p>
-          </div>
-          <p class="project-desc">Brevo handles account-lifecycle email only &mdash; staff invites, password resets &mdash; not order or quotation notifications, which are still sent manually by staff in this first version. The whole system was built module-by-module against a Backend &rarr; Web &rarr; Full-Flow E2E test cycle, which is where the 549 automated backend tests came from &mdash; nothing shipped without integration coverage.</p>
+          <p class="project-desc">The Order Register keeps all 14 modules honest through an auto-trigger engine, with rules like "no closing an order until its invoice is fully paid" enforced in two places on purpose so there's no path that can skip it. Business logic lives only in the service layer, never in a router, and secrets like Razorpay's key and the Brevo API key go through a shared Fernet-based encryption helper and are never returned to the frontend.</p>
           <div class="tag-list">
             <span class="tag">FastAPI</span>
             <span class="tag">Python</span>
