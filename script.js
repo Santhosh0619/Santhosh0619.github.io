@@ -33,7 +33,7 @@
 
   const typingTextEl = document.getElementById("typing-text");
   const cursorEl = document.getElementById("cursor");
-  const TAGLINE = "I Build Backends. I Automate with AI.";
+  const TAGLINE = "I Build Full-Stack Apps. I Automate with AI.";
   const TYPE_SPEED_MS = 60;
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

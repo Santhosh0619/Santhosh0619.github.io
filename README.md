@@ -1,6 +1,6 @@
 # Santhosh K — Portfolio Website
 
-Personal portfolio site for Santhosh K, Backend Developer & AI Automation specialist.
+Personal portfolio site for Santhosh K, Full Stack Developer & AI Automation specialist.
 
 ## Stack
 
